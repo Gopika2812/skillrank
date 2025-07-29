@@ -1,0 +1,259 @@
+/* General Reset */
+body {
+  margin: 0;
+  font-family:poppins, sans-serif;
+  background-color: #0f0129;
+  color: white;
+}
+
+/* Container Split Layout */
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+}
+
+/* Left Panel */
+.left {
+  flex: 1;
+  padding: 40px;
+  background-image: url("/public/bg.png"); /* Replace with your background */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Top Header */
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo & Brand */
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.sub-name {
+  font-size: 12px;
+  letter-spacing: 6px;
+  color: #cccccc;
+}
+
+.subtext {
+  display: none;
+}
+
+/* Headline */
+.headline {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.headline span {
+  color: #c689ff;
+}
+
+/* Right Panel */
+.right {
+  flex: 1;
+  background-color: #120136;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Right Section Typography */
+.right h1 {
+  font-size: 77px;
+  margin-bottom: 10px;
+}
+
+.right p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Email Input */
+input[type="email"] {
+  width: 98%;
+  padding: 12px;
+  margin: 10px 0 20px 0;
+  background-color: #261046;
+  border: none;
+  font-size: 20px;
+  border-radius: 4px;
+  color: white;
+  height: 30px;
+}
+
+/* Sign Up Button */
+.signup-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #501794, #3E70A1);
+  color: white;
+  border: none;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  height: 62px;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background-color: #333;
+  margin: 20px 0;
+}
+
+/* Social Buttons */
+.socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.social {
+  height: 50px;
+  font-size: 15px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #261046;
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.social img {
+  margin-right: 8px;
+}
+
+.social.google:hover {
+  background-color: #db4437;
+}
+
+.social.facebook:hover {
+  background-color: #3b5998;
+}
+
+/* Terms Text */
+.terms {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.terms span {
+  color: #c689ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Footer */
+.foot {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    background-image: url("/public/bg1.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .headline{
+    display: none;
+  }
+  .left {
+    background: none;
+    padding: 20px;
+    flex: none;
+  }
+  .logo {
+    width: 30px;
+    height: 30px;
+  }
+  .name{
+    font-size: 18px;
+  }
+  .sub-name{
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+  .right {
+    background: none;
+    padding: 20px;
+    flex: none;
+  }
+
+  .right h1 {
+    margin-top: 250px;
+    font-size: 36px;
+  }
+
+  .foot {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .right h1 {
+    font-size: 36px;
+  }
+
+  .subtext {
+    display: block;
+    font-size: 10px;
+    margin-top: 10px;
+  }
+
+  input[type="email"] {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0 20px 0;
+  background-color: #261046;
+  border: none;
+  font-size: 15px;
+  border-radius: 4px;
+  color: white;
+}
+
+  .signup-btn,
+  .social {
+    font-size: 16px;
+  }
+}
+
+
+
