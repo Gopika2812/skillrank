@@ -6,30 +6,31 @@ const SignIn = () => {
   const [message, setMessage] = useState("");
 
   const handleSignUp = async () => {
-    if (!email) {
-      setMessage("Please enter an email.");
-      return;
-    }
+  if (!email) {
+    setMessage("Please enter an email.");
+    return;
+  }
 
-    try {
-      fetch(`${process.env.REACT_APP_API_URL}/signUp`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
+  try {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/signUp`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    });
 
-      const result = await response.json();
-      if (response.ok) {
-        setMessage("Signup successful!");
-        setEmail("");
-      } else {
-        setMessage(`${result.error}`);
-      }
-    } catch (error) {
-      setMessage("Server error. Try again.");
+    const result = await response.json();
+
+    if (response.ok) {
+      setMessage("Signup successful!");
+      setEmail("");
+    } else {
+      setMessage(`${result.error}`);
     }
+  } catch (error) {
+    setMessage("Server error. Try again.");
+  }
   };
 
   return (
