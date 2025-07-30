@@ -6,31 +6,31 @@ const SignIn = () => {
   const [message, setMessage] = useState("");
 
   const handleSignUp = async () => {
-  if (!email) {
-    setMessage("Please enter an email.");
-    return;
-  }
-
-  try {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/signUp`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email }),
-    });
-
-    const result = await response.json();
-
-    if (response.ok) {
-      setMessage("Signup successful!");
-      setEmail("");
-    } else {
-      setMessage(`${result.error}`);
+    if (!email) {
+      setMessage("❗ Please enter an email.");
+      return;
     }
-  } catch (error) {
-    setMessage("Server error. Try again.");
-  }
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/signUp`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setMessage("Signup successful!");
+        setEmail("");
+      } else {
+        setMessage(`${result.error || "Signup failed."}`);
+      }
+    } catch (error) {
+      setMessage(" Server error. Please try again later.");
+    }
   };
 
   return (
@@ -47,7 +47,8 @@ const SignIn = () => {
           <p className="subtext">HAVE AN ACCOUNT? SIGN IN</p>
         </div>
         <h2 className="headline">
-          SIGN IN TO YOUR <br /><span>ADVENTURE!</span>
+          SIGN IN TO YOUR <br />
+          <span>ADVENTURE!</span>
         </h2>
       </div>
 
@@ -66,17 +67,23 @@ const SignIn = () => {
           Sign up
         </button>
 
-        {message && <p style={{ marginTop: "10px" }}>{message}</p>}
+        {message && <p style={{ marginTop: "10px", color: "#333" }}>{message}</p>}
 
         <div className="divider"></div>
         <p>Or continue with</p>
         <div className="socials">
           <button className="social google">
-            <img src="https://img.icons8.com/color/24/000000/google-logo.png" alt="Google" />
+            <img
+              src="https://img.icons8.com/color/24/000000/google-logo.png"
+              alt="Google"
+            />
             Google
           </button>
           <button className="social facebook">
-            <img src="https://img.icons8.com/color/24/000000/facebook-new.png" alt="Facebook" />
+            <img
+              src="https://img.icons8.com/color/24/000000/facebook-new.png"
+              alt="Facebook"
+            />
             Facebook
           </button>
         </div>
@@ -87,7 +94,7 @@ const SignIn = () => {
       </div>
 
       <div className="foot">
-        <p className="text">Copyright by ELite Memon</p>
+        <p className="text">© Copyright by ELite Memon</p>
       </div>
     </div>
   );
