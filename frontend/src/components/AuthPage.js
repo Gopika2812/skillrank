@@ -12,12 +12,12 @@ const SignIn = () => {
     }
 
     try {
-      const response = await fetch("https://skillrank-backend.onrender.com/signUp", {
+      fetch(`${process.env.REACT_APP_API_URL}/signUp`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email })
+        body: JSON.stringify({ email }),
       });
 
       const result = await response.json();
