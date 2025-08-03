@@ -53,17 +53,17 @@ const SignIn = () => {
               <div className="sub-name">M E M O N</div>
             </div>
           </div>
-          <p className="subtext">HAVE AN ACCOUNT? SIGN IN</p>
+          <p className="subtext">NEW USER? SIGN IN</p>
         </div>
         <h2 className="headline">
-          SIGN IN TO YOUR <br />
+          LOG IN TO YOUR <br />
           <span>ADVENTURE!</span>
         </h2>
       </div>
 
       <div className="right">
-        <h1>SIGN IN</h1>
-        <p>Sign in with email address</p>
+        <h1>LOGIN IN</h1>
+        <p>Log in with email address</p>
 
         <input
           type="email"
@@ -73,15 +73,15 @@ const SignIn = () => {
         />
 
         <button className="signup-btn" onClick={handleSignUp}>
-          Sign up
+          Login
         </button>
 
         {message && <p style={{ marginTop: "10px", color: "#fff" }}>{message}</p>}
 
         <p style={{ marginTop: "10px" }}>
-          Already have an account?{" "}
-          <Link to="/login" style={{ color: "#007bff", textDecoration: "underline" }}>
-            Go to Login
+          Are you new?{" "}
+          <Link to="/" style={{ color: "#007bff", textDecoration: "underline" }}>
+            Move to signUp
           </Link>
         </p>
         <div className="divider"></div>
